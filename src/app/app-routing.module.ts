@@ -1,7 +1,18 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
-const routes: Routes = [];
+import { HomeComponent } from './shared/components/home/home.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'search/:game-search',
+    component: HomeComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
