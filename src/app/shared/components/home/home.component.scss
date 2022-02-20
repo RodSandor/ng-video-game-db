@@ -35,7 +35,7 @@
   flex-wrap: wrap;
 }
 .game {
-  box-shadow: 4px 3px 8px 0 rgb(200 152 44);
+  box-shadow: 4px 3px 8px 0 #0d6efd;
   background-color: #202020;
   transition-duration: 0.3s;
   border-radius: 5px;
@@ -45,7 +45,7 @@
   width: 280px;
   margin: 10px;
   &:hover {
-    box-shadow: 4px 3px 11px 6px rgb(200 152 44);
+    box-shadow: 4px 3px 11px 6px #0d6efd;
     transform: translateY(-3px);
   }
   &-thumb-container {
