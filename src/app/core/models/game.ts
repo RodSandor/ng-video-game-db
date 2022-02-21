@@ -1,13 +1,14 @@
 export interface Game {
-  bgImg: string;
+  id: string;
+  background_image: string;
   name: string;
   released: string;
-  matecriticUrl: string;
+  matecritic_url: string;
   website: string;
   description: string;
   metacritic: number;
   genre: Array<Genre>
-  parentPlatform: Array<ParentPlatform>;
+  parent_platforms: Array<ParentPlatform>;
   publishers: Array<Publisher>;
   ratings: Array<Rating>;
   screenshots: Array<Screenshots>;
@@ -40,6 +41,8 @@ export interface Publisher {
 
 export interface ParentPlatform {
   platform: {
+    id: number;
     name: string;
+    slug: string;
   };
 }

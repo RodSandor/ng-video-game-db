@@ -1,0 +1,38 @@
+<div class="details">
+  <div class="game-banner">
+    <img src="" alt="" class="game-banner-img" />
+  </div>
+
+  <div class="game-content">
+    <div class="details-wrapper">
+      <div class="game-header">
+        <h1 class="game-header-title">Game Name</h1>
+
+        <h2 class="game-header-release-date"></h2>
+        <p class="game-header-genre">
+          <span></span>
+        </p>
+
+        <div class="game-gauge">
+          <mwl-gauge
+            [animationDuration]="2"
+            [dialStartAngle]="180"
+            [value]="gameRating"
+            [dialEndAngle]="0"
+            [color]="getColor"
+            [animated]="true"
+            [max]="100"
+            class="two"
+          >
+          </mwl-gauge>
+
+          <a class="game-gauge-label" target="_blank" href="">Metacritic</a>
+
+        </div>
+      </div>
+
+      <!-- here will go tabs -->
+
+    </div>
+  </div>
+</div>
