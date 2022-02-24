@@ -1,5 +1,5 @@
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
@@ -11,11 +11,11 @@ import { Game } from 'src/app/core/models/game';
   templateUrl: './game-details.component.html',
   styleUrls: ['./game-details.component.scss']
 })
-export class GameDetailsComponent implements OnInit {
+export class GameDetailsComponent implements OnInit, OnDestroy {
   routeSub: Subscription;
   gameSub: Subscription;
-  gameRating = 0;
   gameId: string;
+  gameRating = 0;
   game: Game;
 
   constructor(
@@ -53,6 +53,16 @@ export class GameDetailsComponent implements OnInit {
           this.gameRating = this.game.metacritic;
         }, 1000);
       });
+  }
+
+  ngOnDestroy(): void {
+      if (this.gameSub) {
+        this.gameSub.unsubscribe();
+      }
+
+      if (this.routeSub) {
+        this.routeSub.unsubscribe();
+      }
   }
 }
 

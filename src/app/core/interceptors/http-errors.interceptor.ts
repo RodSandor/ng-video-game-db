@@ -5,7 +5,6 @@ import {
   throwError as observableThrowError,
   Observable,
   catchError,
-  pipe
 } from 'rxjs';
 
 @Injectable({

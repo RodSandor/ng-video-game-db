@@ -8,8 +8,6 @@ import { forkJoin, map, Observable } from 'rxjs';
 import { environment } from './../../../environments/environment';
 import { APIResponse } from '../models/api-response';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -42,7 +40,7 @@ export class HttpService {
     return forkJoin({
       gameInfoReq,
       gameScreenshotReq,
-      gameTrailerReq
+      gameTrailerReq,
     }).pipe(
       map((res: any)=> {
         return {

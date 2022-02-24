@@ -1,16 +1,24 @@
 <div class="details">
   <div class="game-banner">
-    <img src="" alt="" class="game-banner-img" />
+    <img
+      [src]="game.background_image"
+      class="game-banner-img"
+      alt="background image"
+    />
   </div>
 
   <div class="game-content">
     <div class="details-wrapper">
       <div class="game-header">
-        <h1 class="game-header-title">Game Name</h1>
+        <h1 class="game-header-title">{{ game.name }}</h1>
 
-        <h2 class="game-header-release-date"></h2>
+        <h2 class="game-header-release-date">
+          Release: {{ game.released | date }}
+        </h2>
         <p class="game-header-genre">
-          <span></span>
+          <span *ngFor="let genre of game.genres; let last = last">
+            {{ genre.name }} <span *ngIf="!last">, </span>
+          </span>
         </p>
 
         <div class="game-gauge">
@@ -26,13 +34,18 @@
           >
           </mwl-gauge>
 
-          <a class="game-gauge-label" target="_blank" href="">Metacritic</a>
+          <a
+            class="game-gauge-label"
+            target="_blank"
+            [href]="game.metacritic_url">
+            Metacritic
+          </a>
 
         </div>
       </div>
 
       <!-- here will go tabs -->
-
+      <app-game-tabs [game]="game"></app-game-tabs>
     </div>
   </div>
 </div>
